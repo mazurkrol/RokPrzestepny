@@ -16,10 +16,9 @@ namespace RokPrzestepny.Pages
             if (Data != null)
             {
                 SessionTransport =JsonConvert.DeserializeObject<SessionTransporter>(Data);
-				ViewData["omg"]="1";
+				HttpContext.Session.SetString("Current", JsonConvert.SerializeObject(SessionTransport));
 			}
-            else
-                ViewData["omg"]="123";
+
         }
     }
 }
