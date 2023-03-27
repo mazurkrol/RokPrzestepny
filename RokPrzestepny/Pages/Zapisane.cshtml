@@ -1,4 +1,13 @@
 ﻿@page
 @model RokPrzestepny.Pages.ZapisaneModel
 @{
+	ViewData["Title"] = "Data in session";
+}
+<p>Dane w zapisane w sesji</p>
+@if (Model.YearPassed != null)
+{
+	<p>
+		@Html.DisplayNameFor(model => Model.YearPassed.Year):
+		@Model.YearPassed.Year
+	</p>
 }

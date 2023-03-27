@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RokPrzestepny.Forms;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace RokPrzestepny.Pages
 {
@@ -25,7 +27,8 @@ namespace RokPrzestepny.Pages
 			{
 				ViewData["Year"]=FizzBuzz.LeapYear();
 				ViewData["Filled"]=FizzBuzz.IsGood();
-			}
+                HttpContext.Session.SetString("Data",JsonConvert.SerializeObject(FizzBuzz));
+            }
 				return Page();
         }
 	}
