@@ -14,15 +14,15 @@ namespace RokPrzestepny.Pages
 		[BindProperty]
 		public SpecialYear FizzBuzz { get; set; }
 		public SessionTransporter SessionTrans = new SessionTransporter();
-        public IndexModel(ILogger<IndexModel> logger)
+		public IndexModel(ILogger<IndexModel> logger)
 		{
 			_logger = logger;
 		}
 
 		public void OnGet()
 		{
-            
-        }
+
+		}
 		public IActionResult OnPost()
 		{
 			if (FizzBuzz != null)
@@ -31,17 +31,17 @@ namespace RokPrzestepny.Pages
 				ViewData["Filled"]=FizzBuzz.IsGood();
 				if (FizzBuzz.IsGood())
 				{
-                    var Data = HttpContext.Session.GetString("Current");
-                    if (Data != null)
-                    {
-                        SessionTrans =JsonConvert.DeserializeObject<SessionTransporter>(Data);
-                    }
-                    SessionTrans.Adder(FizzBuzz);
+					var Data = HttpContext.Session.GetString("Current");
+					if (Data != null)
+					{
+						SessionTrans =JsonConvert.DeserializeObject<SessionTransporter>(Data);
+					}
+					SessionTrans.Adder(FizzBuzz);
 					HttpContext.Session.SetString("Data", JsonConvert.SerializeObject(SessionTrans));
 					HttpContext.Session.SetString("Current", JsonConvert.SerializeObject(SessionTrans));
 				}
-            }
-				return Page();
-        }
+			}
+			return Page();
+		}
 	}
 }

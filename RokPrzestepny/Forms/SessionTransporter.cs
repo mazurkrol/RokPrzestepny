@@ -4,16 +4,16 @@
 	{
 		public List<SpecialYear> SpecialYears;
 
-		public SessionTransporter() 
+		public SessionTransporter()
 		{
-		SpecialYears = new List<SpecialYear>();
+			SpecialYears = new List<SpecialYear>();
 		}
-		public void Adder(SpecialYear specialYear) 
+		public void Adder(SpecialYear specialYear)
 		{
 			SpecialYear yearr = new SpecialYear();
 			yearr.Year = specialYear.Year;
 			yearr.Name = specialYear.Name;
-		SpecialYears.Add(yearr);
+			SpecialYears.Add(yearr);
 		}
 	}
 }

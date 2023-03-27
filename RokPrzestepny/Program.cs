@@ -7,9 +7,9 @@ builder.Services.AddRazorPages();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
-options.IdleTimeout = TimeSpan.FromSeconds(10);
-options.Cookie.HttpOnly = true;
-options.Cookie.IsEssential = true;
+	options.IdleTimeout = TimeSpan.FromSeconds(10);
+	options.Cookie.HttpOnly = true;
+	options.Cookie.IsEssential = true;
 });
 
 

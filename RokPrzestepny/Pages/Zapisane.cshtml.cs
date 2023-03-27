@@ -6,19 +6,19 @@ using Newtonsoft.Json;
 
 namespace RokPrzestepny.Pages
 {
-    
-    public class ZapisaneModel : PageModel
-    {
-        public SessionTransporter SessionTransport { get; set; }
-        public void OnGet()
-        {
-            var Data = HttpContext.Session.GetString("Data");
-            if (Data != null)
-            {
-                SessionTransport =JsonConvert.DeserializeObject<SessionTransporter>(Data);
+
+	public class ZapisaneModel : PageModel
+	{
+		public SessionTransporter SessionTransport { get; set; }
+		public void OnGet()
+		{
+			var Data = HttpContext.Session.GetString("Data");
+			if (Data != null)
+			{
+				SessionTransport =JsonConvert.DeserializeObject<SessionTransporter>(Data);
 				HttpContext.Session.SetString("Current", JsonConvert.SerializeObject(SessionTransport));
 			}
 
-        }
-    }
+		}
+	}
 }
