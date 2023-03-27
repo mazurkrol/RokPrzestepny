@@ -29,6 +29,15 @@ namespace RokPrzestepny.Forms
             else
                 return false;
         }
+        public SpecialYear()
+        {
+
+        }
+        public SpecialYear(string name, int? year)
+        {
+            Name = name;
+            Year = year;
+        }
         
 
 

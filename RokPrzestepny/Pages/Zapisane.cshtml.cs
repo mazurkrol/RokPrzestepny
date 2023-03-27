@@ -9,12 +9,17 @@ namespace RokPrzestepny.Pages
     
     public class ZapisaneModel : PageModel
     {
-        public SpecialYear YearPassed { get; set; }
+        public SessionTransporter SessionTransport { get; set; }
         public void OnGet()
         {
             var Data = HttpContext.Session.GetString("Data");
             if (Data != null)
-                YearPassed =JsonConvert.DeserializeObject<SpecialYear>(Data);
+            {
+                SessionTransport =JsonConvert.DeserializeObject<SessionTransporter>(Data);
+				ViewData["omg"]="1";
+			}
+            else
+                ViewData["omg"]="123";
         }
     }
 }
